@@ -5,7 +5,7 @@ git clone https://github.com/AirMaxSys/pico_demo.git --recurse-submodules
 If repo had been clone:
 ```
 git clone https://github.com/AirMaxSys/pico_demo.git
-git submodules update --init --recursive
+git submodule update --init --recursive
 ```
 
 ### Set Pico envirment varible
