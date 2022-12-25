@@ -19,5 +19,6 @@ add_compile_options(-Wall
     -Wno-maybe-uninitialized)
 
 # targets
-add_subdirectory(uart)
-add_subdirectory(spi_master)
+# add_subdirectory(uart)
+# add_subdirectory(spi_master)
+add_subdirectory(ultrasonic_distance_measurement)
