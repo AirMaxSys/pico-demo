@@ -1,7 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
 add_executable(uart main.c)
 
-pico_enable_stdio_usb(uart 1)
-pico_enable_stdio_uart(uart 0)
-
-target_link_libraries(uart pico_stdlib)
+target_include_directories(uart PUBLIC ../common)
+target_link_libraries(uart PUBLIC pico_stdlib pico_com_lib)
 pico_add_extra_outputs(uart)
