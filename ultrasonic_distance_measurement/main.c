@@ -12,20 +12,10 @@
 #include "hardware/pwm.h"
 #include "hardware/clocks.h"
 #include "hardware/irq.h"
-
-#define RP2040_GPIO_NUM 29U
-#define PICO_LED_TRIG() gpio_xor_mask(1U<<25)
+#include "common.h"
 
 uint udm_slice_num;
 uint distance;
-
-void pico_led_init(void)
-{
-    // LED PIN:25
-    gpio_init(25);
-    gpio_set_dir(25, true);
-
-}
 
 static uint udm_calc_distance(uint us)
 {
@@ -106,6 +96,7 @@ int main()
     udm_slice_num = udm_echo_pulse_measurement_init(udm_echo_pin);
 
     while (1) {
+        printf("test uart\r\n");
         // UDM starting
         udm_start(udm_trig_pin);
         PICO_LED_TRIG();
